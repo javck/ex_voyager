@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\User;
+use App\Item;
+use App\Order;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -27,7 +29,19 @@ class SiteController extends Controller
     //商店頁
     public function renderShopPage()
     {
-        return view('shop');
+        $items = Item::get();
+        return view('shop',compact('items'));
+    }
+
+    //提交訂單
+    public function submitOrder($item_id)
+    {
+        $order = new Order;
+        $order->user_id = 1; //為簡化程式，預設管理者自己下單
+        $order->item_id = $item_id;
+        $order->quantity = 1;
+        $order->save(); //將訂單存到資料庫中
+        return redirect('/shop');
     }
 
 }
