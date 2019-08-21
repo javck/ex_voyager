@@ -20,7 +20,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Home - Full Screen Image | Canvas</title>
+	<title>{{ $page->slug }} | Goblin Lab Studio</title>
 
 </head>
 
@@ -67,14 +67,14 @@
 
 		<section id="slider" class="slider-element force-full-screen full-screen">
 
-			<div class="force-full-screen full-screen dark" style="background-image: url('images/landing/landing1.jpg');background-position: 50% 0;">
+			<div class="force-full-screen full-screen dark" style="background-image: url({{ Voyager::image($page->image) }});background-position: 50% 0;">
 
 				<div class="container clearfix">
 					<div class="slider-caption slider-caption-center">
-						<h2 data-animate="fadeInDown">Welcome to Canvas</h2>
-						<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="400">Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on our Canvas.</p>
-						<a data-animate="fadeInUp" data-delay="600" href="#" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">Start Browsing</a>
-						<a data-animate="fadeInUp" data-delay="800" href="#" class="button button-3d button-teal button-large nobottommargin d-none d-md-inline-block" style="margin: 30px 0 0 10px;">Buy Now</a>
+						<h2 data-animate="fadeInDown">{{ $page->title }}</h2>
+						<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="400">{!!$page->body !!}</p>
+						<a data-animate="fadeInUp" data-delay="600" href="http://goblinlab.org" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">開始學習</a>
+						<a data-animate="fadeInUp" data-delay="800" href="http://goblinlab.org" class="button button-3d button-teal button-large nobottommargin d-none d-md-inline-block" style="margin: 30px 0 0 10px;">立刻報名</a>
 					</div>
 				</div>
 
